@@ -393,21 +393,16 @@ const personas = [
 
 function HomeStack() {
   return (
-
-    <Stack.Navigator>
-      <Stack.Screen name="home" component={HomeScreen} 
-      options={{
-        
-        headerTitle : 'Historia',
+    
+    <Stack.Navigator>      
+      <Stack.Screen name="Listado" component={InformacionScreen} options={{
+        headerTitle : 'Listado',
         headerTintColor : 'black',
-        headerStyle: {
+        headerStyle : {
           backgroundColor : '#DB8181',
-          
-        },
-        
+        }
           
         }}/>
-      <Stack.Screen name="Listado" component={InformacionScreen} />
       <Stack.Screen name="persona" component={PersonaScreen} options={{
         headerTitle : 'Detalles de usuario',
         headerTintColor : 'black',
@@ -420,7 +415,7 @@ function HomeStack() {
   );
  }
 
- function HomeScreen() {
+ function HistoriaScreen() {
   return(
     <View>
       <ScrollView>
@@ -539,18 +534,17 @@ function HomeStack() {
             tabBarActiveTintColor: '#DB8181',
             tabBarInactiveTintColor: 'grey',
           })}>
-    <Tab.Screen name="Historia" component={HomeStack} options={{headerShown : false}}/>
-    <Tab.Screen name="Listado" component={InformacionScreen} options={{
-        headerTitle : 'Listado',
+    <Tab.Screen name="Historia" component={HistoriaScreen} options={{
+        headerTitle : 'Historia',
         headerTintColor : 'black',
-        headerStyle: {
+        headerStyle : {
           backgroundColor : '#DB8181',
         }
           
         }}/>
+    <Tab.Screen name="Listado" component={HomeStack} options={{headerShown : false}}/>
     </Tab.Navigator>
     </NavigationContainer>
-
 
   );
 
